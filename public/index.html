@@ -9,11 +9,9 @@
 </head>
 <html>
     <body>
-        <h1>LIST OF USERS</h1>
-        <hr />
+        <h3>LIST OF USERS</h3>
+
         <div class="container">
-            <button id="laugh" onclick="run()">Show</button>
-            <button id="laugh" onclick="hide()">Hide</button>
             <form id="form" method="POST" action="/saving">
                 <div class="input-group">
                     <input value="" type="text" name="nom" />
@@ -26,10 +24,23 @@
                 </div>
                 <input value="Add" type="submit" />
             </form>
+            <div class="secondChild">
+                <button id="laugh" onclick="run()">Show</button>
+                <button id="laugh" onclick="hide()">Hide</button>
+            </div>
         </div>
-        <div id="users" style="visibility: hidden">
-            <p></p>
+        <div id="users" class="users" style="visibility: hidden">
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody id="results"></tbody>
+            </table>
         </div>
+
         <script type="text/javascript" src="main.js"></script>
     </body>
 </html>

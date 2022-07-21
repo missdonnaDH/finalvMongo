@@ -1,25 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-h1 {
-    font-family: "Barlow";
-}
 
-.body {
-    width: 100%;
-    margin: 50px 0px;
+body {
+    margin: 0px 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: baseline;
     min-height: 100vh;
     font-family: "Roboto", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     background-color: #f1f1f1;
-    box-sizing: border-box;
+}
+h3 {
+    font-family: "Barlow";
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 form {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    row-gap: 1rem;
     width: 270px;
 }
 
@@ -30,7 +33,7 @@ input,
     display: block;
     position: relative;
     width: 100%;
-    height: 48px;
+    height: 40px;
 
     border-radius: 8px;
     border: 0px;
@@ -100,14 +103,22 @@ input[type="submit"] {
     color: white;
     cursor: pointer;
 }
-button {
+.secondChild {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    column-gap: 1rem;
+}
+.secondChild button {
+    border: 1px solid #242424;
     background-color: #242424;
     color: white;
     text-align: center;
     cursor: pointer;
     font-size: 14px;
     opacity: 1;
-    padding: 1px 8px;
+    padding: 9px 16px;
     border-radius: 2px;
 }
 
@@ -116,15 +127,36 @@ input[type="submit"]:focus {
 }
 
 .container {
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     align-items: baseline;
     column-gap: 10rem;
     justify-content: center;
 }
-.contacts {
+
+.users {
     display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-    margin-top: 5px;
+    margin-top: 40px;
+}
+.custom-table {
+    min-width: 500px;
+}
+.custom-table thead tr,
+.custom-table thead th {
+    border-top: none;
+    border-bottom: none !important;
+}
+.custom-table tbody th,
+.custom-table tbody td {
+    color: #777;
+    font-weight: 400;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-weight: 300;
+}
+.custom-table tbody tr th,
+.custom-table tbody tr td {
+    background: #fff;
+    border: none;
 }
