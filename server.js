@@ -26,10 +26,9 @@ app.get("/api/movie", async function (req, res) {
 });
 
 app.post("/saving", async (req, res) => {
-    const data = {
-        nom: req.body.nom,
-        num: req.body.num,
-    };
+    const name = req.body.nom;
+    const numero = req.body.num;
+    const data = { nom: name, num: numero };
     const client = new MongoClient(uri, { useUnifiedTopology: true });
     try {
         await client.connect();
