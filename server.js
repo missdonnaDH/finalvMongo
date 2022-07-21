@@ -25,16 +25,17 @@ app.get("/api/movie", async function (req, res) {
     }
 });
 
-app.get("/saving", async (req, res) => {
+app.post("/saving", async (req, res) => {
+    const data = {
+        nom: req.body.nom,
+        num: req.body.num,
+    };
     const client = new MongoClient(uri, { useUnifiedTopology: true });
     try {
         await client.connect();
         const database = client.db("contacts");
         const col = database.collection("conties");
-        const data = {
-            nom: "dad",
-            num: "145",
-        };
+
         const result = await col.insertOne(data, (err, data) => {
             if (err) {
                 res.redirect("error.html");
