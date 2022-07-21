@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-
 const { MongoClient } = require("mongodb");
 
 const uri =
@@ -26,6 +25,23 @@ app.get("/api/movie", async function (req, res) {
     }
 });
 app.post("/saving", async (req, res) => {
+    MongoClient.connect(uri, function (err, db) {
+        if (err) throw err;
+        console.log("Switched to " + db.databaseName + " database");
+        // document to be inserted
+        var doc = { nom: "Roshan", num: "22" };
+
+        // insert document to 'users' collection using insertOne
+        db.collection("conties").insertOne(doc, function (err, res) {
+            if (err) throw err;
+            console.log("Document inserted");
+            // close the connection to db when you are done with it
+            db.close();
+        });
+    });
+});
+/*
+app.post("/saving", async (req, res) => {
     const client = new MongoClient(uri, { useUnifiedTopology: true });
     try {
         await client.connect();
@@ -44,7 +60,7 @@ app.post("/saving", async (req, res) => {
         await client.close();
     }
     res.redirect("/");
-});
+});*/
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3000, () => console.log("Server is running..."));
