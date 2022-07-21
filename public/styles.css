@@ -144,13 +144,14 @@ input[type="submit"]:focus {
 }
 .custom-table thead tr,
 .custom-table thead th {
-    border-top: none;
-    border-bottom: none !important;
+    border: 1px solid transparent;
+    border-radius: 8px;
 }
 .custom-table tbody th,
 .custom-table tbody td {
     color: #777;
     font-weight: 400;
+    padding-left: 7px;
     padding-bottom: 20px;
     padding-top: 20px;
     font-weight: 300;
