@@ -33,14 +33,17 @@ app.post("/saving", async (req, res) => {
         var doc = { nom: "Roshan", num: "22" };
 
         // insert document to 'users' collection using insertOne
-        db.collection("conties").insertOne(doc, function (err, res) {
-            if (err) throw err;
-            console.log("Document inserted");
-            // close the connection to db when you are done with it
-            db.close();
-        });
+        const result = db
+            .collection("conties")
+            .insertOne(doc, function (err, res) {
+                if (err) throw err;
+                console.log("Document inserted");
+                // close the connection to db when you are done with it
+                db.close();
+            });
+
+        return res.json(result);
     });
-    return res.json(result);
 });
 /*
 app.post("/saving", async (req, res) => {
