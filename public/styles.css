@@ -12,6 +12,7 @@ body {
     background-color: #f1f1f1;
 }
 h3 {
+    margin-top: 15px;
     font-family: "Barlow";
     font-weight: bold;
     text-decoration: underline;
