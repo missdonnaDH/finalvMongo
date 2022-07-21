@@ -31,10 +31,11 @@ app.post("/saving", async (req, res) => {
         await client.connect();
         const database = client.db("contacts");
         const col = database.collection("conties");
-        await col.insertOne({
+        const data = {
             nom: req.body.nom,
             num: req.body.num,
-        });
+        };
+        await col.insertOne(data);
     } catch (err) {
         console.log(err);
     } finally {
