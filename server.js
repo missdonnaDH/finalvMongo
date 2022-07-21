@@ -9,10 +9,10 @@ const uri =
 // use the express-static middleware
 app.use(express.static("public"));
 
+const client = new MongoClient(uri, { useUnifiedTopology: true });
+
 // define the first route
 app.get("/api/movie", async function (req, res) {
-    const client = new MongoClient(uri, { useUnifiedTopology: true });
-
     try {
         await client.connect();
         const database = client.db("contacts");
@@ -26,7 +26,7 @@ app.get("/api/movie", async function (req, res) {
     }
 });
 app.post("/saving", async (req, res) => {
-    const client = new MongoClient(uri, { useUnifiedTopology: true });
+    //  const client = new MongoClient(uri, { useUnifiedTopology: true });
     try {
         await client.connect();
         const database = client.db("contacts");
