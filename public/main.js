@@ -7,7 +7,7 @@ function run() {
             for (let i = 0; i < data.length; i++) {
                 user += `<p>${data[i].nom}  -  ${data[i].num}</p>`;
             }
-            detailsElement.getElementsByTagName["p"].innerHTML = user;
+            detailsElement.getElementsByTagName("p")[0].innerHTML = user;
             detailsElement.style.visibility = "visible";
         });
 }
