@@ -141,11 +141,12 @@ input[type="submit"]:focus {
 }
 .custom-table {
     min-width: 500px;
+    border: 1px solid #777;
+    border-radius: 12px;
 }
 .custom-table thead tr,
 .custom-table thead th {
     border: 1px solid transparent;
-    border-radius: 8px;
 }
 .custom-table tbody th,
 .custom-table tbody td {
