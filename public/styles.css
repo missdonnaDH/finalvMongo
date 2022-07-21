@@ -139,26 +139,3 @@ input[type="submit"]:focus {
     display: flex;
     margin-top: 40px;
 }
-.custom-table {
-    min-width: 500px;
-    border: 1px solid #777;
-    border-radius: 12px;
-}
-.custom-table thead tr,
-.custom-table thead th {
-    border: 1px solid transparent;
-}
-.custom-table tbody th,
-.custom-table tbody td {
-    color: #777;
-    font-weight: 400;
-    padding-left: 7px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    font-weight: 300;
-}
-.custom-table tbody tr th,
-.custom-table tbody tr td {
-    background: #fff;
-    border: none;
-}
