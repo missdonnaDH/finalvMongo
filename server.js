@@ -27,7 +27,6 @@ app.get("/api/movie", async function (req, res) {
 });
 app.post("/saving", async (req, res) => {
     const client = new MongoClient(uri, { useUnifiedTopology: true });
-
     try {
         await client.connect();
         const database = client.db("contacts");
@@ -38,6 +37,7 @@ app.post("/saving", async (req, res) => {
     } finally {
         await client.close();
     }
+    res.redirect("/");
 });
 
 // start the server listening for requests
