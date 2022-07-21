@@ -38,9 +38,9 @@ app.post("/saving", async (req, res) => {
         const result = await col.insertOne(data, (err, data) => {
             if (err) res.redirect("error.html");
             else res.redirect("success.html");
+
+            return res.json(result);
         });
-        console.log(data + "1" + result);
-        return res.json(result);
     } catch (err) {
         console.log(err);
     } finally {
