@@ -1,12 +1,16 @@
 const express = require("express");
 const app = express();
 const { MongoClient } = require("mongodb");
+const bodyParser = require("body-parser");
 
 const uri =
     "mongodb+srv://xene:HHez1wpLFRCUJCqw@essay-cluster.ah07px7.mongodb.net/contacts?retryWrites=true&w=majority";
 
 // use the express-static middleware
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
+// parse application/json
+app.use(bodyParser.json());
 
 // define the first route
 app.get("/api/movie", async function (req, res) {
