@@ -15,30 +15,27 @@ app.get("/api/movie", async function (req, res) {
 
     try {
         await client.connect();
-
         const database = client.db("contacts");
         const collection = database.collection("conties");
-
-        // Query for a movie that has the title 'Back to the Future'
-        //const query = { genres: "Comedy", poster: { $exists: true } };
-        /*  const cursor = await collection.aggregate([
-            // { $match: query },
-            { $sample: { size: 1 } },
-            {
-                $project: {
-                    nom: 1,
-                    num: 1,
-                },
-            },
-        ]);*/
         const cursor = await collection.find({}).toArray();
-        //const movie = await cursor.next();
-        console.log(cursor + " !!");
         return res.json(cursor);
     } catch (err) {
         console.log(err);
     } finally {
-        // Ensures that the client will close when you finish/error
+        await client.close();
+    }
+});
+app.post("/saving", async (req, res) => {
+    const client = new MongoClient(uri, { useUnifiedTopology: true });
+
+    try {
+        await client.connect();
+        const database = client.db("contacts");
+        const collection = database.collection("conties");
+        await collection.insertOne(req.body);
+    } catch (err) {
+        console.log(err);
+    } finally {
         await client.close();
     }
 });
