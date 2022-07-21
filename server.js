@@ -36,9 +36,11 @@ app.post("/saving", async (req, res) => {
             num: req.body.num,
         };
         const result = await col.insertOne(data, (err, data) => {
-            if (err) res.redirect("error.html");
-            else res.redirect("success.html");
-
+            if (err) {
+                res.redirect("error.html");
+            } else {
+                res.redirect("success.html");
+            }
             return res.json(result);
         });
     } catch (err) {
@@ -46,7 +48,6 @@ app.post("/saving", async (req, res) => {
     } finally {
         await client.close();
     }
-    res.redirect("/");
 });
 
 // start the server listening for requests
