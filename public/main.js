@@ -7,14 +7,12 @@ function run() {
             for (let i = 0; i < data.length; i++) {
                 user += `<p>${data[i].nom}  -  ${data[i].num}</p>`;
             }
-            detailsElement[0].innerHTML = user;
-
+            detailsElement.getElementsByTagName["p"].innerHTML = user;
             detailsElement.style.visibility = "visible";
         });
 }
 
 function hide() {
     const detailsElement = document.getElementById("users");
-
     detailsElement.style.visibility = "hidden";
 }
