@@ -1,36 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 h1 {
-	font-family: 'Barlow' ;
+    font-family: "Barlow";
 }
 
-body {
-	font-family: 'Barlow' ;
-	width: 50%;
-	margin-left: 25%;
-	text-align: justify;
-	line-height: 1.7;
-	font-size: 18px;
+.body {
+    width: 100%;
+    margin: 50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    background-color: #f1f1f1;
+    box-sizing: border-box;
 }
 
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 16px;
+    width: 270px;
+}
+
+/* General input styles */
+
+input,
+.input-group {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 48px;
+
+    border-radius: 8px;
+    border: 0px;
+    font-size: inherit;
+    box-sizing: border-box;
+}
+
+/* Text Fields */
+
+input:not([type="submit"]) {
+    border: 2px solid #767676;
+    padding: 16px;
+    background-color: #f1f1f1;
+}
+
+input:not([type="submit"]):focus {
+    background-color: white;
+    border: 2px solid #242424;
+    outline: none;
+}
+
+input:not([type="submit"]):not([value=""]) {
+    border: 2px solid #242424;
+}
+
+label {
+    font-size: 16px;
+    position: absolute;
+    display: inline-block;
+    left: 16px;
+    top: 14px;
+    pointer-events: none;
+    z-index: 1;
+    color: #767676;
+    opacity: 0.5;
+
+    transition: 0.4s cubic-bezier(0.65, -0.32, 0.38, 1.23) all;
+    -moz-transition: 0.4s cubic-bezier(0.65, -0.32, 0.38, 1.23) all;
+    -webkit-transition: 0.4s cubic-bezier(0.65, -0.32, 0.38, 1.23) all;
+}
+
+input:focus ~ label,
+input:not([value=""]) ~ label {
+    top: -10px;
+    left: 8px;
+    font-size: 14px;
+    opacity: 1;
+    padding: 1px 8px;
+    border-radius: 2px;
+}
+
+input:not([value=""]) ~ label {
+    background-color: #f1f1f1;
+    color: #242424;
+}
+
+input:focus ~ label {
+    background-color: #242424;
+    color: white;
+}
+
+/* Submit Button */
+
+input[type="submit"] {
+    margin-top: 8px;
+    background-color: #242424;
+    color: white;
+    cursor: pointer;
+}
 button {
-	font-size: 18px;
-	font-weight: 600;
-	color: #000;
-	font-family: 'Barlow' ;
+    background-color: #242424;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 1;
+    padding: 1px 8px;
+    border-radius: 2px;
 }
 
-#laugh {
-	background-color: #fedc65;
+input[type="submit"]:focus {
+    outline: none;
 }
 
-#movie {
-	display: flex;
-	flex-direction: row;
-	margin-top: 45px;
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    column-gap: 10rem;
+    justify-content: center;
 }
-
-#movie img {
-	margin-right: 45px;
-	width: 400px;
-	height: 600px;
-	object-fit: cover;
+.contacts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    margin-top: 5px;
 }

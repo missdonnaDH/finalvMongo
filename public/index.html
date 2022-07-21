@@ -12,6 +12,19 @@
         <h1>LIST OF USERS</h1>
         <hr />
         <button id="laugh" onclick="run()">show</button>
+        <form id="form" method="POST" action="/saving">
+            <div class="input-group">
+                <input value="" type="text" name="nom" />
+                <label>Name</label>
+            </div>
+
+            <div class="input-group">
+                <input value="" type="text" name="age" />
+                <label>Age</label>
+            </div>
+
+            <input value="Add" type="submit" />
+        </form>
         <div id="movie" style="visibility: hidden">
             <p></p>
         </div>
