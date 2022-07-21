@@ -40,9 +40,8 @@ app.post("/saving", async (req, res) => {
                 console.log("Document inserted");
                 // close the connection to db when you are done with it
                 db.close();
+                return res.json(result);
             });
-
-        return res.json(result);
     });
 });
 /*
