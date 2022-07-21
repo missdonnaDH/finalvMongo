@@ -2,7 +2,7 @@ function run() {
     fetch("/api/movie")
         .then((response) => response.json())
         .then((data) => {
-            const detailsElement = document.getElementById("movie");
+            const detailsElement = document.getElementById("users");
             let user = "";
             for (let i = 0; i < data.length; i++) {
                 user += `${data[i].nom} - ${data[i].num}\n`;
@@ -11,4 +11,10 @@ function run() {
 
             detailsElement.style.visibility = "visible";
         });
+}
+
+function hide() {
+    const detailsElement = document.getElementById("users");
+
+    detailsElement.style.visibility = "hidden";
 }
