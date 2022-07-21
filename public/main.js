@@ -2,12 +2,12 @@ function run() {
     fetch("/api/movie")
         .then((response) => response.json())
         .then((data) => {
-            const detailsElement = document.getElementById("results");
+            const detailsElement = document.getElementById("users");
             let user = "";
             for (let i = 0; i < data.length; i++) {
-                user += `<tr> <td>${data[i].nom}</td> <td> ${data[i].num}</d> </tr>`;
+                user += `<p>${data[i].nom}  -  ${data[i].num}</p>`;
             }
-            detailsElement.innerHTML = user;
+            detailsElement[0].innerHTML = user;
 
             detailsElement.style.visibility = "visible";
         });
