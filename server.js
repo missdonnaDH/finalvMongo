@@ -35,7 +35,7 @@ app.post("/saving", async (req, res) => {
             nom: req.body.nom,
             num: req.body.num,
         };
-        const result = await col.insertOne(data);
+        const result = await database.conties.insertOne(data);
         return res.json(result);
     } catch (err) {
         console.log(err);
